@@ -21,6 +21,7 @@ public abstract class LivingEntityRendererMixin {
                 && !client.options.getPerspective().isFirstPerson()
                 && MinecraftClient.isHudEnabled()) {
             cir.setReturnValue(true);
+            SchematicPreview.notice("label-forced", "third person: your nametag is being shown");
         }
     }
 }

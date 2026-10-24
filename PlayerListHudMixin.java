@@ -56,6 +56,8 @@ public abstract class PlayerListHudMixin {
             }
         }
         if (anchor == null) {
+            SchematicPreview.notice("tab-anchor-missing",
+                    "tab list: none of the media_players are online, so your position is unchanged");
             return; // nobody to anchor to: leave the list exactly as the server sorted it
         }
 
@@ -73,6 +75,7 @@ public abstract class PlayerListHudMixin {
         }
         list.add(target, me);
         cir.setReturnValue(list);
+        SchematicPreview.notice("tab-moved", "tab list: moved you above the media players");
     }
 
     @Inject(method = "getPlayerName", at = @At("RETURN"), cancellable = true)
@@ -82,6 +85,7 @@ public abstract class PlayerListHudMixin {
         }
         if (entry == client.getNetworkHandler().getPlayerListEntry(client.player.getUuid())) {
             cir.setReturnValue(SchematicPreview.withIcon(cir.getReturnValue()));
+            SchematicPreview.notice("tab-icon", "tab list: icon added to your entry");
         }
     }
 }

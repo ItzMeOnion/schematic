@@ -20,6 +20,7 @@ public abstract class EntityRendererMixin {
         MinecraftClient client = MinecraftClient.getInstance();
         if (SchematicPreview.enabled && entity == client.player && state.displayName != null) {
             state.displayName = SchematicPreview.withIcon(state.displayName);
+            SchematicPreview.notice("label-icon", "third person: icon added to your nametag");
         }
     }
 }
