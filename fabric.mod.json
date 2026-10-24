@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "schematic_preview",
+  "version": "1.0.0",
+  "name": "Schematic preview",
+  "description": "Cosmetic, client-only: shows an icon next to your own name in third person and in the tab list. Only you see it.",
+  "authors": ["Onxon"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.schematic.preview.SchematicPreview"]
+  },
+  "mixins": ["schematic_preview.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "1.21.8",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
